@@ -18,12 +18,12 @@ backend "zookeeper" {
 backend "file" {
   path = "<%= p("vault.backend.file.path") %>"
 }
-<% elsif p("vault.backend.s3", "false") == true %>
+<% elsif p("vault.backend.s3.use_s3", "false") == true %>
 backend "S3" {
   bucket = "<%= p('vault.backend.s3.bucket') %>"
-	access_key = "<%= p('vault.backend.s3.access_key') %>"
-	secret_key = "<%= p('vault.backend.s3.secret_key') %>"
-	region = "<%= p('vault.backend.s3.region') %>"
+  access_key = "<%= p('vault.backend.s3.access_key') %>"
+  secret_key = "<%= p('vault.backend.s3.secret_key') %>"
+  region = "<%= p('vault.backend.s3.region') %>"
 }
 <% else %>
 backend "inmem" {

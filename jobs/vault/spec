@@ -63,6 +63,9 @@ properties:
   vault.backend.file.path:
     description: Path for File backend
     default: /var/vcap/store/
+  vault.backend.use_s3:
+    description: Use File backend
+    default: false
   vault.backend.s3.bucket:
     description: S3 bucket name
   vault.backend.s3.access_key:
